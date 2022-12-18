@@ -33,6 +33,18 @@ def menu_koszt():
         +-------------------+ 
         ''')
 
+def menu_daniny():
+    print('''
+        +-------------------+
+        |      Daniny       |
+        +-------------------+
+        |1.   Dochodowy     |
+        |2.     VAT         |
+        |3.     ZUS         |
+        |0.     Wróć        |
+        +-------------------+ 
+        ''')
+
 
 
 def menu_inwestycje():

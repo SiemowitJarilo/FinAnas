@@ -1,5 +1,5 @@
 import sqlite3
-from menu import menu, menu_sprzedaz, menu_koszt, menu_inwestycje, menu_inwestycje_skarbonki
+from menu import menu, menu_sprzedaz, menu_koszt, menu_daniny, menu_inwestycje, menu_inwestycje_skarbonki
 from db import db_create_kpir, db_create_kalendarz, db_create_fundusze, db_create_inwestycje
 
 db_create_kpir()
@@ -160,12 +160,29 @@ while True: #Główne Menu
 #==================================================================================================
 #=======================================================================================================
     if choice_menu == '3':  # DANINY        
-        print('Work in progressssss....')
+        while True:
+            menu_daniny()
+            choice_daniny = input("Wybierz opcję: ")
+            
+            if choice_daniny == "1":
+                print("### PODATEK DOCHODOWY ###")
+                cursor.execute('''
+                    SELECT SUM(kalendarz.Wartość) - SUM(koszty.Netto) FROM 
+                ''')
+                # Dochód = przychód - koszty
+                # Podatek = dochód * 12% - 300
+            if choice_daniny == "2":
+                print("### VAT ###")
+            if choice_daniny == "3":
+                print("### ZUS ###")
+            if choice_daniny == "0":
+                print("### WRÓĆ ###")
+
 
         
      
-        # VAT do zapłaty: 
-        break
+
+        
 #==================================================================================================
 #=======================================================================================================
     if choice_menu == '4': # INWESTYCJE
