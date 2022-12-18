@@ -166,9 +166,12 @@ while True: #Główne Menu
             
             if choice_daniny == "1":
                 print("### PODATEK DOCHODOWY ###")
-                cursor.execute('''
-                    SELECT SUM(kalendarz.Wartość) - SUM(koszty.Netto) FROM 
-                ''')
+                cursor.execute('''               
+                
+                SELECT kalendarz.Data_ID, (kalendarz.Wartość)-(sum(koszty.Netto))  
+                FROM kalendarz
+                INNER JOIN koszty
+                WHERE kalendarz.Data_ID = koszty.Data_ID''')
                 # Dochód = przychód - koszty
                 # Podatek = dochód * 12% - 300
             if choice_daniny == "2":
