@@ -50,19 +50,7 @@ while True:
     db.commit()
 
 
-    print("Menu: ")
-    print("1. Pokaż skarbonki ")
-    print("2. Dodaj skarbonkę ")
-    print("3. Pokaż kwoty Skarbonek ")
-    print("4. Dodaj kwote do skarbonki ")
-    print("5. Usuń Skarbonkę ")
-    print("6. Kryptowaluty")
-    print("0. Zamknij program ")
-    print("*" * 79)
-    print("*" * 79)
-    print()
-    print()
-    print()
+    
     choice = int(input("Wybierz opcje: "))
     
     if choice == 1: # Pokaz skarbonkę

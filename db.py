@@ -36,3 +36,31 @@ def db_create_kalendarz():
         );''')
 
     db.commit
+
+def db_create_inwestycje():
+    db = sqlite3.connect("simple.db")
+    cursor = db.cursor()
+
+    cursor.execute('''
+
+        CREATE TABLE IF NOT EXISTS inwestycje(
+        ID          INTEGER     PRIMARY KEY     AUTOINCREMENT,
+        NAZWA       STRING,
+        WARTOŚĆ     INTEGER,
+        KWOTA       INTEGER)
+            ''')
+    db.commit
+    
+def db_create_fundusze():
+    db = sqlite3.connect("simple.db")
+    cursor = db.cursor()
+    cursor.execute('''
+
+        CREATE TABLE IF NOT EXISTS fundusze(
+        ID          INTEGER     PRIMARY KEY     AUTOINCREMENT,
+        NAZWA       STRING,
+        KWOTA       INTEGER,
+        invest_ID   INTEGER,
+        FOREIGN KEY(invest_ID) REFERENCES inwestycje(ID)
+        );''')        
+    db.commit
